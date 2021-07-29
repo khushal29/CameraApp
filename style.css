@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+
+.video-container{
+    background: black;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    position: fixed;
+    border: none;
+    right: 2rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background: black;
+    border: 8px solid white;
+    z-index: 3;
+}
+
+button span {
+    height: 60%;
+    width: 70%;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+#record{
+    top: 40vh; 
+}
+
+#record span {
+    background-color: red;
+}
+  
+
+#capture{
+    top: 60vh;
+}
+
+#capture span {
+    background-color: red;
+}
+
+#gallery {
+    bottom: 4rem;
+    color: white;
+    font-size: 1.1rem;
+  }
+
+.filters {
+    z-index: 3;
+    height: 16rem;
+    width: 7rem;
+    border: 1px solid;
+    position: fixed;
+    top: 20vh;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    border: 1px solid;
+    flex-grow: 1;
+    /* background-blend-mode coz image and background colour dono aaye overlap hokr */
+    background-blend-mode: color-burn;
+    /* image filter background mein full aaye but size thoda crop ho jygi unlike contain */
+    background-size: cover;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/I/91wcUPNHFEL.png);
+}
+
+.zoom{
+    z-index: 3;
+    position: fixed;
+    border: 1px solid;
+    height: 8rem;
+    width: 4rem;
+    top: 16vh;
+    right: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.zoom div{
+    z-index: 3;
+    background: #332e2e;
+    flex-grow: 1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.capture-animation{
+    animation: shrinkDownUp;
+    animation-duration: 3s;
+}
+
+.record-animation{
+    animation: shrinkDownUp;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+}
+
+.filter-div {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+@keyframes shrinkDownUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
